@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>APRIORI</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="static/img/favicon.ico" />
+    <!-- Custom Google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap icons-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+  </head>
+  <body class="d-flex flex-column h-100 bg-light">
+    <main class="flex-shrink-0">
+      <!-- Navigation-->
+      <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container">
+          <a class="navbar-brand" href="/"
+            ><span class="fw-bolder text-primary">ALGOMINE</span></a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-lg-0 small fw-bolder">
+              <li class="nav-item">
+                <a class="nav-link" href="/">
+                  <div class="badge bg-dark text-white">HOME</div></a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/algo.html">
+                  <div class="badge bg-dark text-white">ALGO</div></a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/">
+                  <div class="badge bg-dark text-white">ABOUT</div></a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">
+                  <div class="badge bg-dark text-white">CONTACT</div></a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <section class="py-5">
+        <div class="container px-5 my-5">
+          <div class="text-center">
+            <h1 class="display-5 fw-bolder mb-0">
+              <span class="text-gradient d-inline">APRIORI</span>
+            </h1>
+          </div>
+          <div class="text-center">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link active"
+                  id="info-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#info-tab-pane"
+                  type="button"
+                  role="tab"
+                  aria-controls="info-tab-pane"
+                  aria-selected="true"
+                >
+                  Info
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="example-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#example-tab-pane"
+                  type="button"
+                  role="tab"
+                  aria-controls="example-tab-pane"
+                  aria-selected="false"
+                >
+                  Example
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="handson-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#handson-tab-pane"
+                  type="button"
+                  role="tab"
+                  aria-controls="handson-tab-pane"
+                  aria-selected="false"
+                >
+                  Hands-on
+                </button>
+              </li>
+            </ul>
+            
+            <div class="tab-content" id="myTabContent">
+              <div
+                class="tab-pane fade show active"
+                id="info-tab-pane"
+                role="tabpanel"
+                aria-labelledby="info-tab"
+                tabindex="0"
+              >
+
+              <div class="card shadow mb-5">
+                <div class="card-body p-5">
+                  <div class="container">
+                    <div class="mb-3">
+              
+              <h2 align='center' style="color: blue;">Pre-requisite Knowledge</h2><br>
+              <p align='justify'>
+                Imagine you're shopping at a store, and you go in to buy one thing, let's say <strong>bread</strong>. But as you walk through the aisles, you end up picking up other things like <strong>butter</strong>. This is a common shopping behavior where you buy additional items along with what you initially planned to buy. This phenomenon is called "<strong>impulsive buying</strong>".
+            
+                Big retailers are aware of this behavior, and they use data and clever techniques to encourage you to buy more than you originally intended. One of the techniques they use is <strong><span style="color: blue;">Market Basket Analysis</span></strong>. It's like detective work for shopping habits.
+            </p>
+            <p align='justify'>
+                In other words, Market Basket Analysis is one of the key techniques used by large retailers to uncover associations between items. They try to find out associations between different items and products that can be sold together, which gives assistance in right product placement. Typically, it figures out what products are being bought together and organizations can place products in a similar manner.
+            </p>
+            <p align='justify'>
+                <strong><span style="color: blue;">Association Rule Mining</span></strong> : Think of Association Rule Mining as a detective looking for patterns in what people buy. For example, it notices that a lot of people who buy <strong>bread</strong> also buy <strong>butter</strong>. This is an association, or a rule: "If someone buys bread, they often buy butter too." This can be represented as a rule. Association rules can be thought of as an IF-THEN relationship. Suppose item A is being bought by the customer, then the chances of item B being picked by the customer too under the same Transaction ID is found out.
+            </p>
+            <p align='justify'>
+                There are two elements of these rules: <strong>Antecedent (IF)</strong> and <strong>Consequent (THEN)</strong>.
+            <br>
+                <strong><span style="color: blue;">Antecedent (IF)</span></strong>: The Antecedent is like the "IF" part of a rule. It's the item or group of items that you look at first. You're interested in finding out what items are typically found together in your dataset. For example, if you're a retailer, you might wonder, "IF a customer buys bread, what else do they tend to buy?" So, in this case, "bread" is the Antecedent.
+            <br>
+                <strong><span style="color: blue;">Consequent (THEN)</span></strong>: The Consequent is the "THEN" part of the rule. It's the item that comes along with the Antecedent or group of Antecedents. Continuing with our retail example, if you find that people who buy bread often buy butter, then "butter" is the Consequent. So, you're saying, "IF a customer buys bread(Antecedent), THEN they tend to buy butter(Consequent)."
+            </p>
+            <p align='justify'>
+                There are 3 ways to measure association: <strong>Support</strong>, <strong>Confidence</strong>, and <strong>Lift</strong>.
+            <br>
+                <strong><span style="color: blue;">Support</span></strong>: Support helps us find out how often items A and B are bought together. It tells us about the frequency of these items being purchased as a pair. If Support is high, it means that A and B are frequently bought together. If Support is low, it means the combination doesn't occur very often.
+           <br>
+           <div style="text-align: center;">
+            <span style="font-weight: bold;">Support (S) = freq(A,B) / total transactions</span><br>
+           </div></p>
+           <p align='justify'>
+            <strong><span style="color: blue;">Confidence</span></strong>: Confidence tells us how often item B is bought when item A is bought. It's like a "confidence level" that if someone buys A, they will also buy B. For example, if Confidence is high (let's say 80%), it means that 80% of the time when A is purchased, B is also purchased. This gives retailers insights into which items are likely to be bought together, allowing them to target customers with related offers.
+            
+            <br>
+            <div style="text-align: center;">
+              <span style="font-weight: bold;">Confidence = freq(A,B) / freq(A)</span>
+             </div>
+            </p>
+            <p align='justify'>
+             <strong><span style="color: blue;">Lift</span></strong>: Lift is about the strength of a rule. It compares the probability of both A and B being bought together to the probability of them being bought separately. If Lift is high (let's say 4), it means that the chance of buying B when you buy A is 4 times higher than if they were bought independently. So, a high Lift indicates a strong association between A and B. This kind of strong association can be used by retailers to create effective promotions and product placements.
+                <div style="text-align: center;">
+                  <span style="font-weight: bold;">Lift = Support / (Support(A) x Support(B)) </span>
+                 </div>
+            </p>
+            <p align='justify'>
+                In simple terms, <strong>Support</strong> helps us identify what items are bought together often, <strong>Confidence</strong> tells us how sure we can be about this association, and <strong>Lift</strong> measures the strength of the relationship between the items. These concepts are used in Association Rule Mining to find out which items tend to be bought together by customers when they shop.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+        
+              
+              </div>
+              <div
+                class="tab-pane fade"
+                id="example-tab-pane"
+                role="tabpanel"
+                aria-labelledby="example-tab"
+                tabindex="0"
+              >
+              <div class="card shadow mb-5">
+                <div class="card-body p-5">
+                  <div class="container">
+                    <div class="mb-3">
+                      <h2 align='center' style="color: blue;">Apriori algorithm - Example</h2><br>
+              <p align="justify"><strong><span style="color: blue;">Idea - </span></strong> To generate candidate itemsets of a given size and then scan dataset to check if their counts are large. The process is iterative.</p>
+              <p align="justify"> 1.	All singleton item sets are candidate for the first pass. Any items with less than specified support value is eliminated.<br>
+                  2.	We repeat the same for two-member item sets and more.<br>
+                  3.	Frequent item sets constitute set of frequent item sets.<br>
+                  4.	Generate association rules which have confidence values greater than or equal to specified minimum confidence.
+               </p>
+               
+              <p align="justify">Let's say <strong>min support is = 2</strong></p>
+              <img src = "/static/img/t1.png" alt="transaction table example">
+              <p align="justify">Therefore,here the final item set is {2,3}.</p><br>
+
+              <p align="justify"><strong><span style="color: blue;">Let’s say we have the following data of a store.</span></strong></p>
+              <img src = "/static/img/ts.png" alt="transaction of store table example">
+              <p align="justify"><strong>Iteration 1:</strong> Let’s assume the <span style="color: blue;">support value is 2</span> and create the item sets of the size of 1 and calculate their support values.</p>
+              <img src = "/static/img/ts1.png" alt="transaction of store table example">
+              <br>
+              <p align="justify">As you can see here, item 4 has a support value of 1 which is less than the min support value. So we are going to discard {4} in the upcoming iterations. We have the final Table F1.</p>
+              <br>
+              <p align="justify"><strong>Iteration 2:</strong> Next we will create itemsets of size 2 and calculate their support values. All the combinations of items set in F1 are used in this iteration. Itemsets having Support less than 2 are eliminated again. In this case {1,2}.</p>
+              <img src = "/static/img/ts2.png" alt="transaction of store table example">
+              <br>
+              <p align="justify"><strong>Iteration 3:</strong> Now we will look for a set of three items. We will use the itemsets found in step 2 and create a set of 3 items.
+
+                To create a set of 3 items, another rule, called <strong>self-join</strong> is required. It says that from the item pairs, say for example - from {1, 2}, {1, 3}, {2, 3}, {2, 4}  we look for two pairs with the identical letter and so we get different set of items like {1,2,3}, {2,3,4}, {1,2,4}.</p>
+
+              <p align="justify">We also need to know <strong>pruning</strong> where we are going to divide the itemsets of size 3 into their subsets and eliminate the subsets that are having a support value less than 2.</p>
+              <img src = "/static/img/ts3.png" alt="transaction of store table example">
+              <p align="justify">Here, We will discard {1,2,3} and {1,2,5} as they both contain {1,2}.<br>
+                Again we can apply the self-join rule in F3 then we get {1, 2, 3, 5} item set, but it is not a frequent itemset i.e here itemset formed by joining above table is {1, 2, 3, 5} and its subset contains {1,2,3},{1, 2, 5} which is not frequent. Hence, we stop here because no frequent itemset is found frequent further.</p>
+                <p align="justify">With F3 we get the following itemsets:<br>
+                  <strong>For I = {1,3,5}</strong>, subsets are {1,3}, {1,5}, {3,5}, {1}, {3}, {5}
+                  <strong>For I = {2,3,5}</strong>, subsets are {2,3}, {2,5}, {3,5}, {2}, {3}, {5}
+                   <br>
+                  Applying Rules:  We will create rules and apply them on itemset F3. Now let’s assume a <span style="color: blue;">minimum confidence value is 60%</span>.<br><br>
+                  For every subset S of I, <br>
+                  •	<strong>S –> (I-S) </strong> [means S recommends I-S]<br>
+                  •	If <strong> support(I) / support(S) >= min confidence value</strong><br><br>
+                  So, for <strong>I = {1,3,5}</strong><br>
+                  <strong>Rule 1: </strong> {1,3} –> ({1,3,5} – {1,3}) means 1 & 3 –> 5<br>
+                  Confidence = support(1,3,5)/support(1,3) = 2/3 = 66.66% > 60%<br>
+                  Hence Rule 1 is <strong>Selected</strong><br><br>
+                  <strong>Rule 2: </strong> {1,5} –> ({1,3,5} – {1,5}) means 1 & 5 –> 3<br>
+                  Confidence = support(1,3,5)/support(1,5) = 2/2 = 100% > 60%<br>
+                  Rule 2 is <strong>Selected</strong><br><br>
+                  <strong>Rule 3: </strong> {3,5} –> ({1,3,5} – {3,5}) means 3 & 5 –> 1<br>
+                  Confidence = support(1,3,5)/support(3,5) = 2/3 = 66.66% > 60%<br>
+                  Rule 3 is <strong>Selected</strong><br><br>
+                  <strong>Rule 4: </strong> {1} –> ({1,3,5} – {1}) means 1 –> 3 & 5<br>
+                  Confidence = support(1,3,5)/support(1) = 2/3 = 66.66% > 60%<br>
+                  Rule 4 is <strong>Selected</strong><br><br>
+                  <strong>Rule 5: </strong> {3} –> ({1,3,5} – {3}) means 3 –> 1 & 5<br>
+                  Confidence = support(1,3,5)/support(3) = 2/4 = 50% <60%<br>
+                  Rule 5 is <strong>Rejected</strong><br><br>
+                  <strong>Rule 6: </strong> {5} –> ({1,3,5} – {5}) means 5 –> 1 & 3<br>
+                  Confidence = support(1,3,5)/support(5) = 2/4 = 50% < 60%<br>
+                  Rule 6 is <strong>Rejected</strong><br>
+                  This is how we create rules in Apriori Algorithm and the same steps can be implemented for the itemset <strong>{2,3,5}</strong>.
+                  </p>
+                
+                <p align="justify"></p>
+                <p align="justify"></p>
+
+                
+                </div>
+              </div>
+            </div>
+          </div>
+              
+              </div>
+              <div
+                class="tab-pane fade"
+                id="handson-tab-pane"
+                role="tabpanel"
+                aria-labelledby="handson-tab"
+                tabindex="0"
+              >
+                <div class="card shadow mb-5">
+                  <div class="card-body p-5">
+                    <div class="container">
+                      <div class="mb-3">
+                        <h2>Data Preview</h2>
+                        <div class="preview-container bg-light p-3">
+                          <div id="json-data" class="table-responsive">
+                            <!-- JSON data will be inserted here -->
+                          </div>
+                          <div class="mb-3" id="previewButtons">
+                            <div class="d-flex justify-content-center">
+                              <button class="btn btn-info" id="previewButton" onclick="previewFile()">
+                                Preview
+                              </button>
+                              <button class="btn btn-danger" id="closeButton" style="display: none" onclick="closePreview()">
+                                Close Preview
+                              </button>
+                              <a class="btn btn-default" href="static/data/groceries_dataset.csv" download="demo_file.csv">
+                                Download
+                                <i class="fa fa-download" aria-hidden="true"></i>
+                              </a>
+                            </div>
+                          </div>
+                          
+
+                    <div class="mb-5">
+                      <form action="/algo_apriori.html" method="POST">
+                        <div class="row form-group">
+                          <div class="col-md-6">
+                            <label for="min_support" class="form-label">Minimum Support:</label>
+                            <select class="form-select" name="min_support" required>
+                              <option value="" selected disabled>Select Minimum Support</option>
+                              <option value="0.0001">0.0001</option>
+                              <option value="0.0002">0.0002</option>
+                              <option value="0.0003">0.0003</option>
+                              <option value="0.0004">0.0004</option>
+                              <option value="0.0005">0.0005</option>
+                              <option value="0.0006">0.0006</option>
+                              <option value="0.0007">0.0007</option>
+                              <option value="0.0008">0.0008</option>
+                              <option value="0.0009">0.0009</option>
+                            </select>
+                          </div>
+                          <div class="col-md-6">
+                            <label for="min_confidence" class="form-label">Minimum Confidence:</label>
+                            <select class="form-select" name="min_confidence" required>
+                              <option value="" selected disabled>Select Minimum Confidence</option>
+                              <option value="0.0001">0.0001</option>
+                              <option value="0.0002">0.0002</option>
+                              <option value="0.0003">0.0003</option>
+                              <option value="0.0004">0.0004</option>
+                              <option value="0.0005">0.0005</option>
+                              <option value="0.0006">0.0006</option>
+                              <option value="0.0007">0.0007</option>
+                              <option value="0.0008">0.0008</option>
+                              <option value="0.0009">0.0009</option>
+                            </select>
+                          </div>
+                          <div class="col-md-12">
+                            <button type="submit" class="btn btn-primary mt-5">
+                              Run Apriori Analysis
+                            </button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+    />
+    <!-- Bootstrap core JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      var previewShown = false;
+    
+      function displayJSONData(data, numRows) {
+        var jsonDataDiv = $("#json-data");
+        var table = $("<table>").addClass("table table-bordered");
+        var thead = $("<thead>").appendTo(table);
+        var headerRow = $("<tr>").appendTo(thead);
+        for (var key in data[0]) {
+          if (data[0].hasOwnProperty(key)) {
+            $("<th>").text(key).appendTo(headerRow);
+          }
+        }
+        var tbody = $("<tbody>").appendTo(table);
+        // Display a limited number of rows
+        for (var i = 0; i < numRows; i++) {
+          var row = $("<tr>").appendTo(tbody);
+          for (var key in data[i]) {
+            if (data[i].hasOwnProperty(key)) {
+              $("<td>").text(data[i][key]).appendTo(row);
+            }
+          }
+        }
+        // Insert the table into the HTML
+        jsonDataDiv.empty().append(table);
+      }
+    
+      function previewFile() {
+        if (previewShown) {
+          return;
+        }
+        var jsonFileUrl = "static/data/groceries_dataset.json"; // Replace with the correct path to your JSON file
+        // Use jQuery's $.getJSON function to fetch the JSON data
+        $.getJSON(jsonFileUrl, function (data) {
+          // Limit the number of rows to display
+          var numRowsToDisplay = 10; // Change this number to the desired limit
+          // Display the JSON data in a table
+          displayJSONData(data, numRowsToDisplay);
+          // Show the close button
+          $("#closeButton").show();
+          // Hide the preview button
+          $("#previewButton").hide();
+          previewShown = true;
+        }).fail(function () {
+          console.log("Failed to load JSON data.");
+        });
+      }
+    
+      function closePreview() {
+        previewShown = false;
+        // Hide the close button
+        $("#closeButton").hide();
+        // Show the preview button
+        $("#previewButton").show();
+        // Clear the displayed JSON data
+        $("#json-data").empty();
+      }
+    </script>
+    
+  </body>
+</html>
