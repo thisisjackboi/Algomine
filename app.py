@@ -171,6 +171,7 @@ def algo_kmeans():
         plt.figure(figsize=(10, 6))
 
         # Scatter plot of data points with cluster colors and descriptions in the legend
+        #just checking
         for cluster_label, description in cluster_descriptions.items():
             cluster_data = data_with_clusters[data_with_clusters['Clusters'] == cluster_label]
             plt.scatter(cluster_data['Longitude'], cluster_data['Latitude'], label=f'{description}')
